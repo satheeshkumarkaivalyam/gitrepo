@@ -7,7 +7,7 @@ jobs:
       - name: name of the step
         run: echo "echo some commands"
       - name: name of the step
-        run: echo "print some values"
+        run: echo"print some values"
 
   job2:
     runs-on: ubuntu-latest
