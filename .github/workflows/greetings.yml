@@ -3,9 +3,13 @@ on: [workflow_dispatch, push]
 jobs: 
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      file-name: ${{ steps.step11.outputs.name }}
+
     steps:
       - name: name of the step
-        run: echo "echo some commands"
+        id: step11
+        run: echo "name=valueofname" >>$GITHUB_OUTPUT
       - name: name of the step
         run: echo "print some values"
 
@@ -18,3 +22,5 @@ jobs:
         run: echo "STEP_ID=step21" >> $GITHUB_OUTPUT
       - name: step name
         run: echo "step id is ${{ steps.step21.outputs.STEP_ID }}"
+      - name: step name output usage
+        run: echo "output is ${{ needs.job1.outputs.file-name }}"
