@@ -1,5 +1,5 @@
 name: Sample GitHub workflow
-on: [workflow_dispatch, push]
+on: workflow_dispatch
 jobs: 
   job1:
     runs-on: ubuntu-latest
@@ -17,4 +17,4 @@ jobs:
         id: step21
         run: echo "STEP_ID=step21" >> $GITHUB_OUTPUT
       - name: step name
-        run: echo "step id is $STEP_ID"
+        run: echo "step id is ${{ steps.step21.outputs.STEP_ID }}"
