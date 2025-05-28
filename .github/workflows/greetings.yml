@@ -7,13 +7,16 @@ jobs:
       - name: name of the step
         run: echo "echo some commands"
       - name: name of the step
-        run: echo"print some values"
+        run: echo "print some values"
 
   job2:
     runs-on: ubuntu-latest
     needs: job1
     steps:
       - name: step name
-        run: echo "print statement"
+      - id: step21
+        run: echo "job2step1=step21 >> $GITHUB_OUTPUT"
       - name: step name
-        run: echo "print statement"
+        run: echo "step21 value ${{ step21.outputs.job2step1 }}"
+      - name: step name
+        run: echo "$job2step1"
