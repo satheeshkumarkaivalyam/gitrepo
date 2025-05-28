@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: step name
         id: step21
-        run: echo "job2step1=step21 >> $GITHUB_OUTPUT"
+        run: echo "STEP_ID=step21 >> $GITHUB_OUTPUT"
       - name: step name
-        run: echo "$job2step1"
+        run: echo "step id is $STEP_ID"
