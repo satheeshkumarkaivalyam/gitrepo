@@ -1,5 +1,16 @@
 name: Sample GitHub workflow
-on: [workflow_dispatch, push]
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select deployment environment'
+        required: true
+        type: choice
+        options:
+          - SIT
+          - UAT
+          - PPT
+          - PROD
 jobs: 
   job1:
     runs-on: ubuntu-latest
