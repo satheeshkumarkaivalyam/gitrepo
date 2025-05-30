@@ -14,6 +14,7 @@ on:
 jobs: 
   job1:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     env:
       CLIENT: ${{ vars.NAME }}
       AGE: ${{ secrets.AGE }}
