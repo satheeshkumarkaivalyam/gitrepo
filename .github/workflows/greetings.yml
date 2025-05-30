@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: sit
     env:
-      CLIENT: ${{ vars.NAME }}
+      CLIENT: ${{ vars.CLIENT }}
       AGE: ${{ secrets.AGE }}
     outputs:
       file-name: ${{ steps.step11.outputs.name }}
