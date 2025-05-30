@@ -3,6 +3,8 @@ on: [workflow_dispatch, push]
 jobs: 
   job1:
     runs-on: ubuntu-latest
+    env:
+      CLIENT: ${{ vars.NAME }}
     outputs:
       file-name: ${{ steps.step11.outputs.name }}
 
@@ -11,7 +13,7 @@ jobs:
         id: step11
         run: echo "name=valueofname" >>$GITHUB_OUTPUT
       - name: name of the step
-        run: echo "print some values"
+        run: echo "Name of the client ${{ env.CLIENT }}"
 
   job2:
     runs-on: ubuntu-latest
