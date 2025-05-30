@@ -3,9 +3,9 @@ on: [workflow_dispatch, push]
 jobs: 
   job1:
     runs-on: ubuntu-latest
-    environment: sit
+    environment: prod
     env:
-      CLIENT: ${{ vars.CLIENT }}
+      CLIENT: ${{ vars.NAME }}
       AGE: ${{ secrets.AGE }}
     outputs:
       file-name: ${{ steps.step11.outputs.name }}
